@@ -327,4 +327,23 @@ footer p {
     section {
         padding: 1.5rem;
     }
+    margin: 0.6rem 0;
+    color: var(--texto-suave);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    nav {
+        padding: 0.6rem 0.5rem;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.65rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
 }

@@ -284,8 +284,9 @@ figcaption {
     display: flex;
     flex-direction: column;
 
-    /* Tamaño estático: todas las tarjetas miden lo mismo */
-    height: 580px;
+    /* Altura uniforme sin cortar contenido:
+       en desktop el grid estira ambas tarjetas al mismo alto */
+    min-height: 560px;
 
     background: linear-gradient(160deg, rgba(124, 58, 237, 0.16), rgba(124, 58, 237, 0.04));
     border: 1px solid var(--borde);
@@ -418,13 +419,6 @@ figcaption {
         color: #fff;
         transform: translateY(-2px);
         box-shadow: var(--glow);
-    }
-}
-
-@media (max-width: 699px) {
-    .proyecto {
-        height: auto;
-        min-height: 500px;
     }
 }
 

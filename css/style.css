@@ -289,67 +289,111 @@ figcaption {
 #proyectos ul {
     list-style: none;
     display: grid;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
-#proyectos article {
-    background: rgba(124, 58, 237, 0.1);
-    border: 1px solid var(--borde);
-    border-radius: var(--radio-sm);
-    padding: 1.25rem 1.5rem;
-    transition: transform var(--transicion), border-color var(--transicion);
-}
-
-#proyectos h3 {
-    color: var(--morado-claro);
-    font-size: 1.15rem;
-    margin-bottom: 0.35rem;
-}
-
-details {
-    background: rgba(124, 58, 237, 0.12);
-    border: 1px solid var(--borde);
-    border-radius: var(--radio-sm);
-    margin-top: 0.8rem;
+.proyecto {
+    position: relative;
     overflow: hidden;
+    background: linear-gradient(160deg, rgba(124, 58, 237, 0.16), rgba(124, 58, 237, 0.04));
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 2rem 1.75rem;
+    transition: transform var(--transicion),
+                border-color var(--transicion),
+                box-shadow var(--transicion);
 }
 
-details[open] {
-    background: rgba(124, 58, 237, 0.18);
+/* Línea de gradiente superior (crece al hacer hover) */
+.proyecto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: var(--gradiente);
+    transition: width 0.45s ease;
 }
 
-summary {
-    cursor: pointer;
-    padding: 0.9rem 1.3rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--morado-suave);
-    list-style: none;
-    user-select: none;
+/* Número fantasma decorativo */
+.proyecto-numero {
+    position: absolute;
+    top: 0.75rem;
+    right: 1.1rem;
+    font-size: clamp(3.5rem, 10vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(167, 139, 250, 0.35);
+    pointer-events: none;
+}
+
+.proyecto-cabecera {
+    margin-bottom: 0.9rem;
+}
+
+.proyecto-cabecera h3 {
+    font-size: 1.35rem;
     transition: color var(--transicion);
 }
 
-summary::-webkit-details-marker {
-    display: none;
+.proyecto-cabecera > p {
+    color: var(--morado-suave);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-summary::before {
-    content: "▸";
-    display: inline-block;
-    margin-right: 0.5rem;
-    transition: transform var(--transicion);
-}
-
-details[open] summary::before {
-    transform: rotate(90deg);
-}
-
-details p {
-    padding: 0 1.3rem 1.2rem;
+.proyecto-descripcion {
     color: var(--texto-suave);
-    animation: aparecer 0.35s ease;
+    margin-bottom: 1.1rem;
 }
 
+.proyecto-tecnologias {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.proyecto-tecnologias li {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.28rem 0.8rem;
+    border-radius: 999px;
+    color: var(--morado-claro);
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid var(--borde);
+}
+
+@media (hover: hover) {
+    .proyecto:hover {
+        transform: translateY(-6px);
+        border-color: var(--morado);
+        box-shadow: var(--sombra);
+    }
+
+    .proyecto:hover::before {
+        width: 100%;
+    }
+
+    .proyecto:hover .proyecto-cabecera h3 {
+        color: #fff;
+    }
+}
+
+@media (min-width: 700px) {
+    #proyectos ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .proyecto {
+        padding: 2.25rem 2rem;
+    }
+}
 /* ===== Estudios e Idiomas ===== */
 #estudios ul,
 #idiomas ul {
@@ -520,6 +564,7 @@ footer small {
         box-shadow: var(--glow);
     }
 }
+
 
 /* ===== Responsive (mobile-first) ===== */
 @media (min-width: 600px) {

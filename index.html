@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Miguel León</title>
-    <meta author="miguel leon">
+    <meta name="author" content="Miguel León">
+    <meta name="description" content="Portafolio personal de Miguel León, desarrollador de software y estudiante del SENA.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <nav>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#estudios">Estudios</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#idiomas">Idiomas</a>
-            <a href="#intereses">Intereses</a>
-            <a href="#contacto">Contacto</a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#estudios">Estudios</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#idiomas">Idiomas</a></li>
+                <li><a href="#intereses">Intereses</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
-        <h1>Miguel León</h1>
-        <p>17 años  Desarrollador de Software</p>
+        <h1 class="nombre">
+            <span class="nombre-solido">Miguel</span>
+            <span class="nombre-acento">León</span>
+        </h1 >
+        <p>17 años Desarrollador de Software</p>
     </header>
 
     <main>
@@ -28,30 +34,33 @@
             <h2>Sobre mí</h2>
             <p>Apasionado por la tecnología y la programación, con enfoque en aprender y construir proyectos web.</p>
             <figure>
-                <img src="img/foto de perfil.jfif" alt="Foto de perfil" width="180">
+                <img src="img/foto de perfil.jfif" alt="Foto de perfil de Miguel León" width="180">
                 <figcaption>Hola, este soy yo 👋</figcaption>
             </figure>
         </section>
 
         <section id="proyectos">
             <h2>Proyectos</h2>
-                <ul>
-                    <li>Proyecto viajes</li>
-                <details>
-                    <summary>ver detalles..</summary>
-                <p>Aventura Global es una página web diseñada para promocionar paquetes turísticos <br>
-                y destinos de viaje. El sitio presenta un diseño elegante y sofisticado con paleta de <br>
-                colores azul marino y dorado, completamente responsive y con múltiples funcionalidades interactivas <br>
-                y animaciones avanzadas.</p>
-                </details>
-                    <li>Breaking Bad</li>
-                <details>
-                    <summary>ver detalles..</summary>
-                <p>Proyecto web inmersivo sobre la serie **Breaking Bad** (AMC, 2008–2013). <br> 
-                Transformación completa de un proyecto base en una experiencia cinematográfica, <br> 
-                oscura y química con diseño responsive, animaciones avanzadas y chatbot temático.</p>
-                </details>
-                </ul>
+            <ul>
+                <li>
+                    <article>
+                        <h3>Aventura Global (Proyecto viajes)</h3>
+                        <details>
+                            <summary>Ver detalles...</summary>
+                            <p>Aventura Global es una página web diseñada para promocionar paquetes turísticos y destinos de viaje. El sitio presenta un diseño elegante y sofisticado con paleta de colores azul marino y dorado, completamente responsive y con múltiples funcionalidades interactivas y animaciones avanzadas.</p>
+                        </details>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Breaking Bad</h3>
+                        <details>
+                            <summary>Ver detalles...</summary>
+                            <p>Proyecto web inmersivo sobre la serie <em>Breaking Bad</em> (AMC, 2008–2013). Transformación completa de un proyecto base en una experiencia cinematográfica, oscura y química, con diseño responsive, animaciones avanzadas y chatbot temático.</p>
+                        </details>
+                    </article>
+                </li>
+            </ul>
         </section>
 
         <section id="estudios">
@@ -60,12 +69,13 @@
                 <li><strong>Análisis y Desarrollo de Software</strong> - SENA</li>
             </ul>
         </section>
+
         <section id="habilidades">
             <h2>Habilidades</h2>
             <ul>
                 <li>HTML5 / CSS3 / JavaScript</li>
                 <li>Python / PHP</li>
-                <li>SQL / Git & GitHub</li>
+                <li>SQL / Git GitHub</li>
             </ul>
         </section>
 
@@ -73,7 +83,7 @@
             <h2>Idiomas</h2>
             <ul>
                 <li>Español <strong><em>(Nativo)</em></strong></li>
-                <li>Ingles <strong><em>(Basico)</em></strong></li>
+                <li>Inglés <strong><em>(Básico)</em></strong></li>
             </ul>
         </section>
 
@@ -83,28 +93,34 @@
         </section>
     </main>
 
-    <footer id="contacto">
+<footer id="contacto">
+    <section aria-label="Información de contacto">
         <h2>Contacto</h2>
-        <p>Mi GitHub: <a href="https://github.com/leonmiguel2622" target="_blank">github.com/leonmiguel2622</a></p>
-        <p>Mi Linkedin: <a href="https://www.linkedin.com/in/miguel-angel-león-oliveros-54a522357?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">linkedin/miguel</a></p>
-    </footer>
+        <p>¿Interesado en trabajar juntos o conocer más sobre mis proyectos? ¡Hablemos!</p>
+
+        <address>
+            <ul>
+                <li>
+                    <strong>Email:</strong>
+                    <a href="mailto:leonjohan481@gmail.com">leonjohan481@gmail.com</a>
+                </li>
+                <li>
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/leonmiguel2622" target="_blank" rel="noopener noreferrer">github.com/leonmiguel2622</a>
+                </li>
+                <li>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://www.linkedin.com/in/miguel-angel-le%C3%B3n-oliveros-54a522357" target="_blank" rel="noopener noreferrer">linkedin.com/in/miguel-león</a>
+                </li>
+                <li>
+                    <strong>Ubicación:</strong> Colombia
+                </li>
+            </ul>
+        </address>
+    </section>
+
+    <p><small> 2026 Miguel León - Todos los derechos reservados</small></p>
+</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-r_android" target="_blank">linkedin/miguel</a></p>
-    </footer>
-
-</body>
-</html>
-
-
-
-
-
-

@@ -1,0 +1,330 @@
+/* ===== Variables y Reset ===== */
+:root {
+    --morado-oscuro: #1a0b2e;
+    --morado: #7c3aed;
+    --morado-claro: #a78bfa;
+    --morado-suave: #c4b5fd;
+    --texto: #ede9fe;
+    --texto-suave: #b8a8d9;
+    --fondo: #0f0819;
+    --card: rgba(124, 58, 237, 0.08);
+    --borde: rgba(167, 139, 250, 0.25);
+    --gradiente: linear-gradient(135deg, #7c3aed, #d946ef);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Fondo decorativo */
+body::before {
+    content: "";
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.25), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(60px);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -150px;
+    left: -150px;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.18), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(60px);
+}
+
+/* ===== Header / Navegación ===== */
+header {
+    padding-top: 90px;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: rgba(15, 8, 25, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--borde);
+    z-index: 100;
+}
+
+nav a {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+    background: var(--morado);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.5);
+    transform: translateY(-2px);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-top: 1rem;
+    background: var(--gradiente);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+header > p {
+    color: var(--texto-suave);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+/* ===== Secciones ===== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+section {
+    background: var(--card);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    border-color: var(--morado);
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.25);
+}
+
+section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 55%;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--gradiente);
+}
+
+/* ===== Sobre mí ===== */
+#sobre-mi {
+    text-align: center;
+}
+
+figure img {
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background: var(--gradiente) border-box;
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+    transition: transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+figure img:hover {
+    transform: scale(1.06) rotate(2deg);
+}
+
+figcaption {
+    margin-top: 0.8rem;
+    color: var(--morado-claro);
+    font-style: italic;
+}
+
+/* ===== Proyectos ===== */
+#proyectos ul {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+#proyectos li {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--morado-claro);
+}
+
+details {
+    background: rgba(124, 58, 237, 0.12);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    margin: 0.8rem 0 1.5rem;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+details[open] {
+    background: rgba(124, 58, 237, 0.18);
+}
+
+summary {
+    cursor: pointer;
+    padding: 0.9rem 1.3rem;
+    font-weight: 600;
+    color: var(--morado-suave);
+    list-style: none;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: "▸ ";
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary:hover {
+    color: #fff;
+}
+
+details p {
+    padding: 0 1.3rem 1.2rem;
+    color: var(--texto-suave);
+}
+
+details br {
+    display: none;
+}
+
+/* ===== Listas generales ===== */
+ul {
+    list-style-position: inside;
+}
+
+li {
+    padding: 0.3rem 0;
+}
+
+li::marker {
+    color: var(--morado);
+}
+
+strong {
+    color: var(--morado-claro);
+}
+
+em {
+    color: var(--morado-suave);
+}
+
+/* ===== Footer / Contacto ===== */
+footer {
+    background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.12));
+    border-top: 1px solid var(--borde);
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+footer h2 {
+    margin-bottom: 1rem;
+    background: var(--gradiente);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+footer a {
+    color: var(--morado-claro);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradiente);
+    transition: width 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+footer p {
+    margin: 0.6rem 0;
+    color: var(--texto-suave);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    nav {
+        padding: 0.6rem 0.5rem;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.65rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
